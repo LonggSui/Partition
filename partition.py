@@ -277,14 +277,12 @@ CONDITIONS = [
 
 if __name__ == "__main__":
     MAX_N = 100
-    cache = precompute(CONDITIONS, max_n=MAX_N)
 
     for label, counter, _gen in CONDITIONS:
         print(f"\n{'='*60}")
         print(f"Condition {label}")
         print("="*60)
-        parts_by_n = cache[label]
-        N, success = compute_N(counter, max_n=MAX_N, verbose=True, parts_by_n=parts_by_n)
+        N, success = compute_N(counter, max_n=MAX_N, verbose=True)
         print()
         print("SUCCESS" if success else "FAILURE")
         print(f"N = {N}")
